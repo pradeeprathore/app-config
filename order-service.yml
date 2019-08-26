@@ -1,0 +1,34 @@
+spring: 
+ application:
+   name: order-service
+
+server:
+  port: 8100
+  
+account-service:
+  ribbon:
+    eureka:
+      enabled: false
+    listOfServers: localhost:9100
+customer-service:
+  ribbon:
+    eureka:
+      enabled: false
+    listOfServers: localhost:8300
+product-service:
+  ribbon:
+    eureka:
+      enabled: false
+    listOfServers: localhost:8000
+    
+    
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URL:http://localhost:8761/eureka/}
+   
+endpoints:
+  shutdown:
+    enabled: true
+    sensitive: false
+  

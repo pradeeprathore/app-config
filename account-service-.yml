@@ -1,0 +1,13 @@
+spring:
+   application:
+      name: account-service
+server:
+   port: ${PORT:9100}
+eureka:
+   client:
+      serviceUrl:
+         defaultZone: ${EUREKA_URL:http://localhost:8761/eureka/}
+endpoints:
+   shutdown:
+      enabled: true
+      sensitive: false
